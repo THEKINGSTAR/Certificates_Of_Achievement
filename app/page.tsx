@@ -1,25 +1,34 @@
-'use client'
-
-import { useState } from 'react'
-import Header from '@/components/header'
-import Hero from '@/components/hero'
-import Categories from '@/components/categories'
-import CertificateGrid from '@/components/certificate-grid'
-import Timeline from '@/components/timeline'
-import Skills from '@/components/skills'
-import Footer from '@/components/footer'
+import { Header } from '@/components/header'
+import { Hero } from '@/components/hero'
+import { CategorySection } from '@/components/category-section'
+import { SkillsSection } from '@/components/skills-section'
+import { TimelineSection } from '@/components/timeline-section'
+import { Footer } from '@/components/footer'
+import { certificates } from '@/lib/utils'
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState('all')
-
   return (
-    <main className="overflow-hidden">
+    <main className="min-h-screen">
       <Header />
       <Hero />
-      <Categories selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
-      <CertificateGrid selectedCategory={selectedCategory} />
-      <Timeline />
-      <Skills />
+
+      {/* Certificate Categories */}
+      <section id="certificates">
+        {Object.entries(certificates).map(([key, category]) => (
+          <CategorySection
+            key={key}
+            id={key}
+            icon={category.icon}
+            title={category.title}
+            description={category.description}
+            color={category.color}
+            certs={category.certs}
+          />
+        ))}
+      </section>
+
+      <SkillsSection />
+      <TimelineSection />
       <Footer />
     </main>
   )

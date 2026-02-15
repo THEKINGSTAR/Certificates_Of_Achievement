@@ -1,62 +1,54 @@
 'use client'
 
-export default function Hero() {
+export function Hero() {
   return (
-    <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Left content */}
-          <div className="space-y-6 animate-fade-in-up">
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-light leading-tight">
-                Continuous<br />
-                <span className="text-accent">Learning</span>
-              </h1>
-              <p className="text-lg text-neutral-light/70">
-                A comprehensive journey through cloud infrastructure, software development, AI, and professional credentials. Showcasing years of dedication to staying current with industry standards.
-              </p>
-            </div>
+    <section className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-transparent pointer-events-none" />
 
-            <div className="flex flex-wrap gap-3 pt-4">
-              <div className="px-4 py-2 bg-accent/10 border border-accent/30 rounded-lg">
-                <span className="text-accent font-semibold">30+</span>
-                <span className="text-neutral-light/70 ml-2">Certifications</span>
-              </div>
-              <div className="px-4 py-2 bg-secondary/10 border border-secondary/30 rounded-lg">
-                <span className="text-secondary font-semibold">8</span>
-                <span className="text-neutral-light/70 ml-2">Categories</span>
-              </div>
-              <div className="px-4 py-2 bg-primary/20 border border-primary/50 rounded-lg">
-                <span className="text-accent font-semibold">10+</span>
-                <span className="text-neutral-light/70 ml-2">Years Learning</span>
-              </div>
-            </div>
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="mb-6 animate-fade-up">
+          <span className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-blue-400 border border-blue-500/30">
+            Professional Portfolio
+          </span>
+        </div>
 
-            <a
-              href="#certificates"
-              className="inline-block px-8 py-3 bg-accent text-neutral-dark font-bold rounded-lg hover:shadow-lg hover:shadow-accent/50 transition-smooth hover:scale-105"
-            >
-              Explore Certificates →
-            </a>
+        <h1 className="text-5xl sm:text-7xl font-bold mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <span className="gradient-text">Certificate of Achievement</span>
+        </h1>
+
+        <p className="text-lg sm:text-xl text-muted mb-8 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          A comprehensive showcase of professional learning and continuous growth across cloud infrastructure, full-stack development, AI, and specialized technologies over 15+ years.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <a
+            href="#certificates"
+            className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors font-medium"
+          >
+            Explore Certificates
+          </a>
+          <a
+            href="#timeline"
+            className="px-8 py-3 rounded-lg border border-blue-500/50 hover:border-blue-400 transition-colors font-medium hover:bg-blue-500/10"
+          >
+            View Learning Journey
+          </a>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-12 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <div>
+            <div className="text-3xl sm:text-4xl font-bold text-blue-400">30+</div>
+            <p className="text-sm text-muted mt-2">Certificates Earned</p>
           </div>
-
-          {/* Right side - Visual element */}
-          <div className="hidden md:flex justify-center items-center">
-            <div className="relative w-72 h-72">
-              {/* Animated background shapes */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-secondary/20 to-primary/20 rounded-3xl blur-3xl animate-glow" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="inline-block p-4 bg-accent/10 rounded-2xl border border-accent/30">
-                    <svg className="w-16 h-16 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10.894 2.553a.25.25 0 00-.448 0l-1.447 4.45H3.25a.25.25 0 00-.15.46l3.597 2.614-1.447 4.45a.25.25 0 00.388.29l3.597-2.614 3.597 2.614a.25.25 0 00.388-.29l-1.447-4.45 3.597-2.614a.25.25 0 00-.15-.46h-5.748l-1.447-4.45z" />
-                    </svg>
-                  </div>
-                  <p className="text-neutral-light font-semibold">Achievement</p>
-                  <p className="text-neutral-light/60 text-sm">Verified Credentials</p>
-                </div>
-              </div>
-            </div>
+          <div>
+            <div className="text-3xl sm:text-4xl font-bold text-purple-400">15+</div>
+            <p className="text-sm text-muted mt-2">Years of Learning</p>
+          </div>
+          <div>
+            <div className="text-3xl sm:text-4xl font-bold text-cyan-400">8</div>
+            <p className="text-sm text-muted mt-2">Skill Categories</p>
           </div>
         </div>
       </div>
